@@ -1,0 +1,20 @@
+.profile{
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile img {
+  width: 40%;
+  margin-left: 5px;
+  float:left;
+}
+
+.profile_msg {
+  margin-left: 10px;
+}
+
+.foot {
+  float:left;
+  width: 100%;
+}
