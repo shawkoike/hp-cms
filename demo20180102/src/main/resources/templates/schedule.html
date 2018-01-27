@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>プロフィール</title>
+	<link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/profile-pc.css" />
+	<link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/profile-mobile.css" media="screen and (max-width: 900px)" />
+</head>
+<body>
+  <section>
+
+    <article>
+      <div class="menu">
+        <input id="menu--toggle"
+               type="checkbox" />
+        <!-- /#menutoggle -->
+        <label class="menu--toggle__trigger"
+               for="menu--toggle"></label>
+        <!-- /.menutoggle__trigger -->
+        <label class="menu--toggle__burger"
+               for="menu--toggle"></label>
+        <!-- /.menutoggle__burger -->
+
+        <ul class="menu__body">
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./top.html">
+                ホーム
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./profile.html">
+              プロフィール
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./schedule.html">
+              スケジュール
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./disc.html">
+                ディスコグラフィー
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="https://ameblo.jp/kanaasami/">
+              ブログ
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw">
+              ムービー
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./contact.html">
+              コンタクト
+            </a>
+          </li>
+        </ul>
+        <!-- /.menubody -->
+      </div>
+      <!-- /.menu -->
+    </article>
+  </section>
+
+  <div class="top">
+    <div class="profile profile-first">
+      <img class="kanasamiImg" src="http://35.229.108.29/images/rain.jpg" />
+    </div>
+  </div>
+  <br />
+
+  <div class="content1">
+    <div class="profile_msg content-profile">
+      <div class="loading">
+        <span>P</span>
+        <span>r</span>
+        <span>o</span>
+        <span>f</span>
+        <span>i</span>
+        <span>l</span>
+        <span>e</span>
+        <hr />
+      </div>
+		</div>
+
+    <div class="profile_msg content-profile">
+      <h3><strong>&nbsp;&nbsp;楽曲提供</strong></h3>
+      <table border="1"> 
+  		<tr> 
+  			<th>件名</th> 
+ 		</tr>
+		<tr th:each="d:${entity}"> 
+  			<td th:text="${d.title}"></td> 
+ 		</tr> 
+ 	</table>
+      <br /><br />
+    </div>
+  </div>
+  <br />
+</body>
+
+<footer>
+  <div class="foot">
+    <hr />
+    <p>Copyright Kanasami</p>
+    <br />
+  </div>
+</footer>
+
+
+</html>

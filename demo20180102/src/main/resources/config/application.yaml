@@ -1,0 +1,6 @@
+spring: 
+  datasource: 
+    url: jdbc:mysql://localhost/kanasami?useSSL=false 
+    username: koike
+    password: 19940522 
+    driverClassName: com.mysql.jdbc.Driver
