@@ -1,41 +1,47 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Berserker index page</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/top-pc.css"  />
+  <link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/top-mobile.css" media="screen and (max-width: 900px)"  />
+
+  <meta charset="UTF-8" />
+  <title>Kanasami</title>
 </head>
 <body>
+   <div id="fb-root">
    <!-- ヘッダー画像 -->
    <div class="side">
      <img src="http://35.229.108.29/images/head_side.png" />
    </div>
    <div class="head_char">
-     <img src="./images/charHead.png">
+     <img src="http://35.229.108.29/images/charHead.png" />
    </div>
    <div class="head_character">
-     <img src="./images/character.png">
+     <img src="http://35.229.108.29/images/character.png" />
    </div>
  </div>
    <!-- リンクの表 -->
    <ul id="item-list">
      <div class="upper">
      <!-- ホーム -->
-     <li><a href="./top.html"><img src="./images/home.png"></a></li>
+     <li><a href="./top.html"><img src="http://35.229.108.29/images/home.png" /></a></li>
      <!-- プロフィール -->
-     <li><a href="./profile.html"><img src="./images/profile.png"></a></li>
+     <li><a href="./profile.html"><img src="http://35.229.108.29/images/profile.png" /></a></li>
      <!-- スケジュール -->
-     <li><a href="./schedule.html"><img src="./images/schedule.png"></a></li>
+     <li><a href="./schedule.html"><img src="http://35.229.108.29/images/schedule.png" /></a></li>
      </div>
      <div class="bottom">
      <!--  ディスコグラフィー -->
-     <li><a href="./disc.html"><img src="./images/disc.png"></a></li>
+     <li><a href="./disc.html"><img src="http://35.229.108.29/images/disc.png" /></a></li>
      <!-- ブログ -->
-     <li><a href="https://ameblo.jp/kanaasami/"><img src="./images/blog.png"></a></li>
+     <li><a href="https://ameblo.jp/kanaasami/"><img src="http://35.229.108.29/images/blog.png" /></a></li>
      <!-- ムービー -->
-     <li><a href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw"><img src="./images/movie.png"></a></li>
+     <li><a href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw"><img src="http://35.229.108.29/images/movie.png" /></a></li>
      <!-- コンタクト -->
-     <li><a href="./contact.html"><img src="./images/contact.png"></a></li>
+     <li><a href="./contact.html"><img src="http://35.229.108.29/images/contact.png" /></a></li>
      </div>
    </ul>
 
@@ -48,8 +54,8 @@ function changeTwitterWidgetDesign(){
     var $twitter_widget = $('iframe.twitter-timeline');
     var $twitter_widget_contents = $twitter_widget.contents();
 
-    if ($twitter_widget.length > 0 && $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
-      $twitter_widget_contents.find('head').append('<link href="css/top.css" rel="stylesheet" type="text/css">');
+    if ($twitter_widget.length > 0 &amp;&amp; $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
+      $twitter_widget_contents.find('head').append('<link href="http://35.229.108.29/css/top-mobile.css" rel="stylesheet" type="text/css" />');
     }
     else {
       setTimeout(function(){
@@ -65,7 +71,7 @@ function changeTwitterWidgetDesign(){
     var x = document.body.scrollWidth;
     var contentWidth = x - (3*2);
     var container = document.getElementById('container');
-    container.setAttribute("style", "width : "+ contentWidth　+"px;")
+    container.setAttribute("style", "width : "+ contentWidth + "px;")
 </script>
 
 
@@ -95,7 +101,7 @@ function changeTwitterWidgetDesign(){
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10";
+          js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v2.10";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         </script>
@@ -127,12 +133,13 @@ function changeTwitterWidgetDesign(){
 -->
     </div>
 
+
     <div class="shake">
       <img src="http://35.229.108.29/images/peamanman.png" />
     </div>
 
     <footer>
-      <hr>
+      <hr />
       <p>Copyright KanAsami</p>
     </footer>
 </body>
