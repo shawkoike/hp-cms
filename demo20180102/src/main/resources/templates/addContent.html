@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>ライブスケジュール追加</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/font-awesome/css/font-awesome.min.css" />
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/Ionicons/css/ionicons.min.css" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/dist/css/AdminLTE.min.css" />
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/dist/css/skins/_all-skins.min.css" />
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/morris.js/morris.css" />
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/jvectormap/jquery-jvectormap.css" />
+  <!-- Date Picker -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" />
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/bower_components/bootstrap-daterangepicker/daterangepicker.css" />
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="http://35.229.108.29/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>LTE</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="http://35.229.108.29/images/KanAsami-up.jpg" class="user-image" alt="User Image" />
+              <span class="hidden-xs">KanAsami</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li><a href="/admin/cms/login"><i class="fa fa-files-o"></i> <span>Top</span></a></li>
+        <li><a href="https://adminlte.io/docs"><i class="fa fa-pie-chart"></i> <span>Access</span></a></li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Forms</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/addContent"><i class="fa fa-circle-o"></i>Add</a></li>
+            <li><a href="/deleteContent"><i class="fa fa-circle-o"></i>Delete</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        ADD LIVE SCHEDULE
+        <small>Control panel</small>
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <form method="POST" class="sign-up" th:action="@{/addContentRequest}" th:object="${form}" >
+      	<h4>タイトル</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{title}" placeholder="title" />
+	    <h4>本文</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{content}" placeholder="料金無料です。ぜひ親子に来てください。" />
+	    <h4>場所</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{place}" placeholder="渋谷サンプルライブハウス" />
+	    <h4>日付</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{date}" placeholder="2018/04/01" />
+	    <h4>開場時間</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{open}" placeholder="16:00" />
+	    <h4>開演時間</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" th:field="*{start}" placeholder="16:30" />
+	    <br /><br />
+     	<input style="text-align: center;" type="submit" value="登録" class="sign-up-button" />
+   	  </form>
+    </section>
+
+   </div>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer>
+    <div class="foot">
+      <hr />
+      <p>Copyright Kanasami</p>
+      <br />
+    </div>
+  </footer>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="http://35.229.108.29/admin/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="http://35.229.108.29/admin/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="http://35.229.108.29/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="http://35.229.108.29/admin/bower_components/raphael/raphael.min.js"></script>
+<script src="http://35.229.108.29/admin/bower_components/morris.js/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="http://35.229.108.29/admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="http://35.229.108.29/admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="http://35.229.108.29/admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="http://35.229.108.29/admin/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="http://35.229.108.29/admin/bower_components/moment/min/moment.min.js"></script>
+<script src="http://35.229.108.29/admin/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="http://35.229.108.29/admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="http://35.229.108.29/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="http://35.229.108.29/admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="http://35.229.108.29/admin/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="http://35.229.108.29/admin/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="http://35.229.108.29/admin/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="http://35.229.108.29/admin/dist/js/demo.js"></script>
+</body>
+</html>

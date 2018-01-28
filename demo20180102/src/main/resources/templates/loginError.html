@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<title>管理画面ログイン</title>
+	<link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/login.css" />
+</head>
+<body>
+	<!-- header -->
+   <hgroup class="heading">
+     <br />
+     <h1 class="major">KanAsami Login Form </h1>
+     <h3 style="color:red;">ユーザー名、もしくはパスワードが違います</h3>
+   </hgroup>
+
+   <!-- form starts here -->
+   <!-- <form method="POST" class="sign-up" action="http://35.229.108.29/admin" >  -->
+   <form method="POST" class="sign-up" action="/admin" >
+     <h1 class="sign-up-title">Sign In</h1>
+     <input type="text" class="sign-up-input" name="user" placeholder="What's your username?" />
+     <input type="password" class="sign-up-input" name="password" placeholder="Choose a password" />
+     <input type="submit" value="Sign In!" class="sign-up-button" />
+   </form>
+
+   <footer>
+     <hr />
+     <br />
+     <p class="copyright">Copyright Kanasami</p>
+     <br />
+   </footer>
+</body>
+</html>
