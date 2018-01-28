@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/schedule-pc.css" >
+    <link rel="stylesheet" type="text/css" href="css/schedule-mobile.css" media="screen and (max-width: 900px)" >
+  <title>Kanasami</title>
+ </head>
+<body>
+  <section>
+
+    <article>
+      <div class="menu">
+        <input id="menu--toggle"
+               type="checkbox" />
+        <!-- /#menu--toggle -->
+        <label class="menu--toggle__trigger"
+               for="menu--toggle"></label>
+        <!-- /.menu--toggle__trigger -->
+        <label class="menu--toggle__burger"
+               for="menu--toggle"></label>
+        <!-- /.menu--toggle__burger -->
+
+        <ul class="menu__body">
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./top.html">
+                ホーム
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./profile.html">
+              プロフィール
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./schedule.html">
+              スケジュール
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./disc.html">
+                ディスコグラフィー
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="https://ameblo.jp/kanaasami/">
+              ブログ
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw">
+              ムービー
+            </a>
+          </li>
+
+          <li class="menu__body-element">
+            <a class="menu__body-link" href="./contact.html">
+              コンタクト
+            </a>
+          </li>
+        </ul>
+        <!-- /.menu__body -->
+      </div>
+      <!-- /.menu -->
+    </article>
+  </section>
+
+  <div class="top">
+    <div class="profile profile-first">
+      <img class="kanasamiImg" src="./images/rain.jpg">
+    </div>
+  </div>
+  <br />
+
+  <div class="content1">
+    <div class="profile_msg content-profile">
+      <div class="loading">
+        <span>L</span>
+        <span>I</span>
+        <span>V</span>
+        <span>E</span>
+        <span>&nbsp;</span>
+        <span>S</span>
+        <span>c</span>
+        <span>h</span>
+        <span>e</span>
+        <span>d</span>
+        <span>u</span>
+        <span>l</span>
+        <span>e</span>
+        <hr id="sep" />
+      </div>
+		</div>
+
+    <div class="profile_msg content-profile">
+		  <th:each="d:${entity}">
+  		    <h4 class="title">タイトルタイトルタイトル vol.1</h4>
+          <p class="date">日付 : </p>
+          <p class="time">時間 : OPEN/12:00 START/12:30</p>
+          <p class="place">場所 : 渋谷</p>
+          <p class="content">メッセージや注意書き。料金など・・・</p>
+ 		  </th>
+      <hr class="border" />
+      <th:each="d:${entity}">
+  		    <h4 class="title">タイトルタイトルタイトル vol.2</h4>
+          <p class="date">日付 : </p>
+          <p class="time">時間 : OPEN/12:00 START/12:30</p>
+          <p class="place">場所 : 渋谷</p>
+          <p class="content">メッセージや注意書き。料金など・・・</p>
+ 		  </th>
+      <hr class="border" />
+      <th:each="d:${entity}">
+  		    <h4 class="title">タイトルタイトルタイトル vol.1</h4>
+          <p class="date">日付 : </p>
+          <p class="time">時間 : OPEN/12:00 START/12:30</p>
+          <p class="place">場所 : 渋谷</p>
+          <p class="content">メッセージや注意書き。料金など・・・</p>
+ 		  </th>
+      <hr class="border" />
+      <th:each="d:${entity}">
+  		    <h4 class="title">タイトルタイトルタイトル vol.1</h4>
+          <p class="date">日付 : </p>
+          <p class="time">時間 : OPEN/12:00 START/12:30</p>
+          <p class="place">場所 : 渋谷</p>
+          <p class="content">メッセージや注意書き。料金など・・・</p>
+ 		  </th>
+      <hr class="border" />
+      <br /><br />
+    </div>
+  </div>
+  <br />
+</body>
+
+<footer>
+  <div class="foot">
+    <hr>
+    <p>Copyright Kanasami</p>
+    <br />
+  </div>
+</footer>
+
+
+</html>

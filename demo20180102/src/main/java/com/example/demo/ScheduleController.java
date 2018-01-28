@@ -16,7 +16,7 @@ public class ScheduleController {
 	
 	@RequestMapping(value="/schedule")
 	public String schedule(Model model) {
-		// 全県取得
+		// 全件取得
 		Iterable<LiveEntity> entity = repository.findAll();
 		
 		model.addAttribute("entity", entity);

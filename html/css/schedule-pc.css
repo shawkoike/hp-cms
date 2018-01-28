@@ -1,0 +1,345 @@
+html {
+  overflow: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  table-layout: fixed;
+}
+
+body {
+  overflow: hidden;
+  background-image: url("../images/sakura.jpg");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;
+}
+
+.top {
+  float: none;
+  margin-top: 0px;
+}
+
+#sep {
+  color: gray;
+  opacity: .2;
+}
+
+.kanasamiUp {
+  width: 450px;
+  height: 300px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 8px;
+}
+
+.kanasamiImg {
+  width: 100%;
+  height: 150px;
+  margin-top: -10px;
+}
+
+.profile{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
+.toptext p {
+  margin-top: -80px;
+  margin-left: 30px;
+  font-size: 45px;
+  color: #f009e8;
+  font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;
+  font-weight: 800;
+}
+
+.profile-second {
+  float:none;
+}
+
+.profile_msg {
+  font-size: 12px;
+}
+
+.content-profile {
+  background-color: white;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.profile_msg h4 {
+  margin-left: 15px;
+  margin-top: 15px;
+  font-size: 25px;
+  color: #505050;/*文字色*/
+  padding: 0.5em;/*文字周りの余白*/
+  display: inline-block;/*おまじない*/
+  line-height: 1.3;/*行高*/
+  background: #dbebf8;/*背景色*/
+  vertical-align: middle;/*上下中央*/
+  border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
+}
+
+.border {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: .2;
+}
+
+.profile_msg h4:before {
+content: '●';
+color: white;
+margin-right: 8px;
+}
+
+.profile_msg h3 {
+  border-bottom: double 5px #FFC778;
+  font-size: 30px;
+  font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;
+}
+
+.profile_msg h2 {
+  font-size: 40px;
+  font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;
+  text-align: center;
+}
+
+.profile_msg p {
+  line-height: 200%;
+  margin-top: 8px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 15px;
+  font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;
+}
+
+.foot {
+  float:left;
+  width: 100%;
+}
+
+footer p {
+  text-align: right;
+  color: #65686b;
+  padding-right: 50px;
+}
+
+/***************************
+ *  Variables
+ **************************/
+/***************************
+ *  Project Main Styles
+ **************************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  background-color: #e2e2e2;
+}
+
+/***************************
+ *  Application Main Styles
+ **************************/
+#menu--toggle[type="checkbox"]:not(:checked),
+#menu--toggle[type="checkbox"]:checked {
+  display: none;
+}
+
+.menu--toggle__trigger,
+.menu--toggle__burger,
+.menu--toggle__burger:before,
+.menu--toggle__burger:after {
+  position: absolute;
+  top: 1.6em;
+  left: 1.6em;
+  width: 2em;
+  height: 5px;
+  background-color: #282828;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.menu--toggle__trigger {
+  height: 2em;
+  background: none;
+}
+
+.menu--toggle__burger:before {
+  content: "";
+  top: 10px;
+  left: 0;
+}
+.menu--toggle__burger:after {
+  content: "";
+  top: 20px;
+  left: 0;
+}
+
+.menu__body {
+  position: absolute;
+  width: 7em;
+  height: 7em;
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+  border-bottom-right-radius: 100%;
+  box-shadow: 3px 3px 7px rgba(40, 40, 40, 0.2);
+  z-index: 10;
+  animation: checkboxUncheckedAnimation 0.35s both;
+}
+
+.menu__body-element,
+.menu__body-link {
+  display: none;
+  margin: 4.4em 0 -3.3em -.1em;
+  font-weight: normal;
+  color: #282828;
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+}
+
+.menu__body-element {
+  text-indent: 2em;
+}
+
+.menu__body-link:hover {
+  color: #282828;
+  background-color: #e2e2e2;
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger {
+  top: 35px;
+  transform: rotate(405deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:after {
+  top: 0;
+  transform: rotate(90deg);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger + .menu__body {
+  animation: checkboxCheckedAnimation 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+#menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-element, #menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-link {
+  display: block;
+}
+
+.promotion {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("http://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Gooseberry-spring.jpg/1280px-Gooseberry-spring.jpg");
+  background-size: cover;
+}
+
+/**
+ *  Animations
+ *
+ *  @note checkboxCheckedAnimation - added fix for Microsoft Edge
+ */
+@keyframes checkboxCheckedAnimation {
+  50% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+@keyframes checkboxUncheckedAnimation {
+  0% {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@keyframes changeWidthOfElementAnimation {
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.loading {
+  text-align: center;
+}
+
+.loading span {
+  color: #eb5edb;
+  font-size: 50px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: loading 2.6s infinite alternate;
+}
+.loading span:nth-child(2) {
+  animation-delay: .2s;
+}
+.loading span:nth-child(3) {
+  animation-delay: .4s;
+}
+.loading span:nth-child(4) {
+  animation-delay: .6s;
+}
+.loading span:nth-child(5) {
+  animation-delay: .8s;
+}
+.loading span:nth-child(6) {
+  animation-delay: 1s;
+}
+.loading span:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.loading span:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.loading span:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.loading span:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.loading span:nth-child(11) {
+  animation-delay: 2.0s;
+}
+.loading span:nth-child(12) {
+  animation-delay: 2.2s;
+}
+.loading span:nth-child(13) {
+  animation-delay: 2.4s;
+}
+
+@keyframes loading {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: .2;
+  }
+}
