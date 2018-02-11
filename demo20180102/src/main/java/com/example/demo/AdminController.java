@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.LiveEntity;
 import com.example.demo.repository.LiveRepository;
@@ -25,6 +26,25 @@ public class AdminController {
 	public String login(Model model) {
 		model.addAttribute("indexForm", new Form());
 		return "login";
+	}
+	
+	@RequestMapping(value="/fromTab")
+	public String fromTab(RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("key", "kaAndamsiamni");
+		return "redirect:/tabTop";
+	}
+	
+	@RequestMapping(value="/tabTop", method = RequestMethod.GET)
+	public String tabTop(Model model, @ModelAttribute("key") String key) {
+		
+		if (key == "kaAndamsiamni") {
+			// 現在の表示
+			Iterable<LiveEntity> entity = repository.findAll();
+			model.addAttribute("entity", entity);
+			return "admin";
+		}
+
+		return "loginError";
 	}
 	
 	@RequestMapping(value="/admin", method = RequestMethod.POST)

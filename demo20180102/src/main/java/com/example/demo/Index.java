@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Index {
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String index(Model model) {
-	  model.addAttribute("now", new Date().toString());
-	  return "index";
+	  return "hello";
 	}
 }
 

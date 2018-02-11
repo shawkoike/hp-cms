@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/top-pc.css"  />
-  <link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/top-mobile.css" media="screen and (max-width: 900px)"  />
+  <link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/index-pc.css"  />
 
   <meta charset="UTF-8" />
   <title>Kanasami</title>
 </head>
-<body>
+ <body>
    <div id="fb-root">
+
    <!-- ヘッダー画像 -->
    <div class="side">
      <img src="http://35.185.151.37/images/head_side.png" />
@@ -24,7 +24,7 @@
    </div>
  </div>
    <!-- リンクの表 -->
-   <ul id="item-list">
+      <ul id="item-list">
      <div class="upper">
      <!-- ホーム -->
      <li><a href="./"><img src="http://35.185.151.37/images/home.png" /></a></li>
@@ -45,37 +45,26 @@
      </div>
    </ul>
 
-   <h1 class="ribbon">
-     <span class="ribbon-content">twitter</span>
-   </h1>
+ <div class="content">
+   <div class="extra">
+     <div class="topic">
+       <h1>NEWS</h1>
+       <hr class="dots" />
+       <h3>だみーーーーーー</h3>
+     </div>
 
-<script th:inline="javascript">
-function changeTwitterWidgetDesign(){
-    var $twitter_widget = $('iframe.twitter-timeline');
-    var $twitter_widget_contents = $twitter_widget.contents();
-
-    if ($twitter_widget.length > 0 &amp;&amp; $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
-      $twitter_widget_contents.find('head').append('<link href="http://35.185.151.37/css/top-mobile.css" rel="stylesheet" type="text/css" />');
-    }
-    else {
-      setTimeout(function(){
-        changeTwitterWidgetDesign();
-      }, 350);
-    }
-  }
-
-  changeTwitterWidgetDesign();
-</script>
-
-<script th:inline="javascript">
-    var x = document.body.scrollWidth;
-    var contentWidth = x - (3*2);
-    var container = document.getElementById('container');
-    container.setAttribute("style", "width : "+ contentWidth + "px;")
-</script>
-
+     <div class="dialogflow">
+       <iframe
+          width="100%"
+          height="450"
+          src="https://console.dialogflow.com/api-client/demo/embedded/8fb1bcd6-2b0d-4b78-8965-c428024ef450">
+       </iframe>
+     </div>
+   </div>
 
    <div class="sns">
+     <h1>twitter</h1>
+     <hr class="dots" />
      <!-- twiter -->
      <div class="twitter">
       <script th:inline="javascript">
@@ -108,8 +97,8 @@ function changeTwitterWidgetDesign(){
 
        <a class="twitter-timeline"
           href="https://twitter.com/asami_kana"
-          data-width="600px"
-          data-height="600px"
+          data-width="500px"
+          data-height="500px"
 	  data-chrome="nofooter">
           @TwitterDevによるツイート
         </a>
@@ -132,15 +121,17 @@ function changeTwitterWidgetDesign(){
       </div>
 -->
     </div>
+    <!-- sns end -->
+  </div>
 
-
-    <div class="shake">
-      <img src="http://35.185.151.37/images/peamanman.png" />
-    </div>
+  <div class="shake">
+    <img src="http://35.185.151.37/images/peamanman.png" />
+  </div>
 
     <footer>
       <hr />
       <p>Copyright KanAsami</p>
     </footer>
-</body>
+
+ </body>
 </html>

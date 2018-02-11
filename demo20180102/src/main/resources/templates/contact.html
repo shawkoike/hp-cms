@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title>プロフィール</title>
-	<link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/schedule-pc.css" />
-	<link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/schedule-mobile.css" media="screen and (max-width: 900px)" />
+	<link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/profile-pc.css" />
+	<link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/profile-mobile.css" media="screen and (max-width: 900px)" />
 </head>
 <body>
   <section>
@@ -78,37 +78,26 @@
   </div>
   <br />
 
-    <div class="content1">
+  <div class="content1">
     <div class="profile_msg content-profile">
       <div class="loading">
-        <span>L</span>
-        <span>I</span>
-        <span>V</span>
-        <span>E</span>
-        <span>&nbsp;</span>
-        <span>S</span>
+        <span>C</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
         <span>c</span>
-        <span>h</span>
-        <span>e</span>
-        <span>d</span>
-        <span>u</span>
-        <span>l</span>
-        <span>e</span>
-        <hr id="sep" />
+        <span>t</span>
+        <hr />
       </div>
-		</div>
 
-    		<div class="profile_msg content-profile" th:each="d:${entity}">
-  			<h4 class="title" th:text="${d.title}"></h4>
-  			<p class="date" th:text="'日付 : ' + ${d.date}" />
-          	<p class="time" th:text="'時間 : OPEN/' + ${d.open} + ' START/' + ${d.start}" />
-          	<p class="place" th:text="'場所 : ' + ${d.place}" />
-          	<p class="content" th:text="${d.content}" />
-          	<hr class="border" />
- 		 </div>
- 		 <hr class="border" />
- 		 <br /><br />
-    </div>
+      <br />
+      <h3><strong>&nbsp;&nbsp;Contact</strong></h3>
+      <p>
+        お問い合わせは、<strong>kanasami.info@gmail.com</strong>&nbsp;まで
+      </p>
+		</div>
+  </div>
   <br />
 </body>
 
