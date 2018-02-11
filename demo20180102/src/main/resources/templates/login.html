@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <title>管理画面ログイン</title>
-	<link rel="stylesheet" type="text/css" href="http://35.229.108.29/css/login.css" />
+	<link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/login.css" />
 </head>
 <body>
 	<!-- header -->
@@ -14,7 +14,7 @@
    </hgroup>
 
    <!-- form starts here -->
-   <!-- <form method="POST" class="sign-up" action="http://35.229.108.29/admin" >  -->
+   <!-- <form method="POST" class="sign-up" action="http://35.185.151.37/admin" >  -->
    <form method="POST" class="sign-up" th:action="@{/admin}" th:object="${indexForm}" >
      <h1 class="sign-up-title">Sign In</h1>
      <input type="text" class="sign-up-input" th:field="*{user}" placeholder="What's your username?" />
