@@ -1,146 +1,196 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/top-pc.css"  />
-  <link rel="stylesheet" type="text/css" href="http://35.185.151.37/css/top-mobile.css" media="screen and (max-width: 900px)"  />
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css"
+	href="http://35.185.151.37/css/top-pc-2.css" />
+<link rel="stylesheet" type="text/css"
+	href="http://35.185.151.37/css/top-mobile-2.css"
+	media="screen and (max-width: 900px)" />
 
-  <meta charset="UTF-8" />
-  <title>Kanasami</title>
+<meta charset="UTF-8" />
+<title>Kanasami</title>
 </head>
 <body>
-   <div id="fb-root">
-   <!-- ヘッダー画像 -->
-   <div class="side">
-     <img src="http://35.185.151.37/images/head_side.png" />
-   </div>
-   <div class="head_char">
-     <img src="http://35.185.151.37/images/charHead.png" />
-   </div>
-   <div class="head_character">
-     <img src="http://35.185.151.37/images/character.png" />
-   </div>
- </div>
-   <!-- リンクの表 -->
-   <ul id="item-list">
-     <div class="upper">
-     <!-- ホーム -->
-     <li><a href="./"><img src="http://35.185.151.37/images/home.png" /></a></li>
-     <!-- プロフィール -->
-     <li><a href="./profile"><img src="http://35.185.151.37/images/profile.png" /></a></li>
-     <!-- スケジュール -->
-     <li><a href="./schedule"><img src="http://35.185.151.37/images/schedule.png" /></a></li>
-     </div>
-     <div class="bottom">
-     <!--  ディスコグラフィー -->
-     <li><a href="./disc"><img src="http://35.185.151.37/images/disc.png" /></a></li>
-     <!-- ブログ -->
-     <li><a href="https://ameblo.jp/kanaasami/"><img src="http://35.185.151.37/images/blog.png" /></a></li>
-     <!-- ムービー -->
-     <li><a href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw"><img src="http://35.185.151.37/images/movie.png" /></a></li>
-     <!-- コンタクト -->
-     <li><a href="./contact.html"><img src="http://35.185.151.37/images/contact.png" /></a></li>
-     </div>
-   </ul>
-
-   <h1 class="ribbon">
-     <span class="ribbon-content">twitter</span>
-   </h1>
-
-<script th:inline="javascript">
-function changeTwitterWidgetDesign(){
-    var $twitter_widget = $('iframe.twitter-timeline');
-    var $twitter_widget_contents = $twitter_widget.contents();
-
-    if ($twitter_widget.length > 0 &amp;&amp; $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
-      $twitter_widget_contents.find('head').append('<link href="http://35.185.151.37/css/top-mobile.css" rel="stylesheet" type="text/css" />');
-    }
-    else {
-      setTimeout(function(){
-        changeTwitterWidgetDesign();
-      }, 350);
-    }
-  }
-
-  changeTwitterWidgetDesign();
-</script>
-
-<script th:inline="javascript">
-    var x = document.body.scrollWidth;
-    var contentWidth = x - (3*2);
-    var container = document.getElementById('container');
-    container.setAttribute("style", "width : "+ contentWidth + "px;")
-</script>
+	<div id="fb-root">
+		<!-- ヘッダー画像 -->
+		<div class="side">
+			<img src="http://35.185.151.37/images/head_side.png" />
+		</div>
+		<div class="head_char">
+			<img src="http://35.185.151.37/images/charHead.png" />
+		</div>
+		<div class="head_character">
+			<img src="http://35.185.151.37/images/character.png" />
+		</div>
+	</div>
+	<!-- リンクの表 -->
+	<ul id="item-list">
+		<div class="upper">
+			<!-- ホーム -->
+			<li><a href="./"><img
+					src="http://35.185.151.37/images/home.png" /></a></li>
+			<!-- プロフィール -->
+			<li><a href="./profile"><img
+					src="http://35.185.151.37/images/profile.png" /></a></li>
+			<!-- スケジュール -->
+			<li><a href="./schedule"><img
+					src="http://35.185.151.37/images/schedule.png" /></a></li>
+		</div>
+		<div class="bottom">
+			<!--  ディスコグラフィー -->
+			<li><a href="./disc"><img
+					src="http://35.185.151.37/images/disc.png" /></a></li>
+			<!-- ブログ -->
+			<li><a href="https://ameblo.jp/kanaasami/"><img
+					src="http://35.185.151.37/images/blog.png" /></a></li>
+			<!-- ムービー -->
+			<li><a
+				href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw"><img
+					src="http://35.185.151.37/images/movie.png" /></a></li>
+			<!-- コンタクト -->
+			<li><a href="./contact.html"><img
+					src="http://35.185.151.37/images/contact.png" /></a></li>
+		</div>
+	</ul>
+	<br />
 
 
-   <div class="sns">
-     <!-- twiter -->
-     <div class="twitter">
-      <script th:inline="javascript">
-        window.twttr = (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {};
-          if (d.getElementById(id)) return t;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = "https://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
 
-          t._e = [];
-          t.ready = function(f) {
-            t._e.push(f);
-          };
+	<script th:inline="javascript">
+		function changeTwitterWidgetDesign(){
+    			var $twitter_widget = $('iframe.twitter-timeline');
+    			var $twitter_widget_contents = $twitter_widget.contents();
+	    		if ($twitter_widget.length > 0 &amp;&amp; $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
+      			$twitter_widget_contents.find('head').append('<link href="http://35.185.151.37/css/top-mobile.css" rel="stylesheet" type="text/css" />');
+    			}
+    			else {
+      			setTimeout(function(){
+        			changeTwitterWidgetDesign();
+      			}, 350);
+    			}
+  		}
+		changeTwitterWidgetDesign();
+	</script>
+	<script th:inline="javascript">
+    		var x = document.body.scrollWidth;
+    		var contentWidth = x - (3*2);
+    		var container = document.getElementById('container');
+    		container.setAttribute("style", "width : "+ contentWidth + "px;")
+	</script>
+	<div class="sns">
+		<div class="news">
+			<h1 class="ribbon-news">
+				<span class="ribbon-news-content">NEWS</span>
+			</h1>
+			<div class="news-content">
+				<div class="box_srcollbar">
+					<ul>
+						<li>10/06　■■■■■■が再入荷しました。</li>
+						<li>10/05　○○○を追加しました。</li>
+						<li>10/04　■■■ を追加しました。</li>
+						<li>10/03　○○■■■○が再入荷しました。</li>
+						<li>10/02　○■■■■■■○○が再入荷しました。</li>
+						<li>10/01　○○○が再入荷しました。</li>
+						<li>09/28　○○■■○■■■が再入荷しました。</li>
+						<li>09/25　○○○■■■を追加しました。</li>
+						<li>09/23　○○○■■■■■を追加しました。</li>
+						<li>09/22　○○○■■■を追加しました。</li>
+						<li>09/20　○○■■■■○■■■を追加しました。</li>
+						<li>09/18　○○■■○■■■を追加しました。</li>
+						<li>09/17　○■■○○■■■を追加しました。 </li>
+						<li>10/06　■■■■■■が再入荷しました。</li>
+						<li>10/05　○○○を追加しました。</li>
+						<li>10/04　■■■ を追加しました。</li>
+						<li>10/03　○○■■■○が再入荷しました。</li>
+						<li>10/02　○■■■■■■○○が再入荷しました。</li>
+						<li>10/01　○○○が再入荷しました。</li>
+						<li>09/28　○○■■○■■■が再入荷しました。</li>
+						<li>09/25　○○○■■■を追加しました。</li>
+						<li>09/23　○○○■■■■■を追加しました。</li>
+						<li>09/22　○○○■■■を追加しました。</li>
+						<li>09/20　○○■■■■○■■■を追加しました。</li>
+						<li>09/18　○○■■○■■■を追加しました。</li>
+						<li>09/17　○■■○○■■■を追加しました。 </li>
+						<li>10/06　■■■■■■が再入荷しました。</li>
+						<li>10/05　○○○を追加しました。</li>
+						<li>10/04　■■■ を追加しました。</li>
+						<li>10/03　○○■■■○が再入荷しました。</li>
+						<li>10/02　○■■■■■■○○が再入荷しました。</li>
+						<li>10/01　○○○が再入荷しました。</li>
+						<li>09/28　○○■■○■■■が再入荷しました。</li>
+						<li>09/25　○○○■■■を追加しました。</li>
+						<li>09/23　○○○■■■■■を追加しました。</li>
+						<li>09/22　○○○■■■を追加しました。</li>
+						<li>09/20　○○■■■■○■■■を追加しました。</li>
+						<li>09/18　○○■■○■■■を追加しました。</li>
+						<li>09/17　○■■○○■■■を追加しました。 </li>
+						<li>10/06　■■■■■■が再入荷しました。</li>
+						<li>10/05　○○○を追加しました。</li>
+						<li>10/04　■■■ を追加しました。</li>
+						<li>10/03　○○■■■○が再入荷しました。</li>
+						<li>10/02　○■■■■■■○○が再入荷しました。</li>
+						<li>10/01　○○○が再入荷しました。</li>
+						<li>09/28　○○■■○■■■が再入荷しました。</li>
+						<li>09/25　○○○■■■を追加しました。</li>
+						<li>09/23　○○○■■■■■を追加しました。</li>
+						<li>09/22　○○○■■■を追加しました。</li>
+						<li>09/20　○○■■■■○■■■を追加しました。</li>
+						<li>09/18　○○■■○■■■を追加しました。</li>
+						<li>09/17　○■■○○■■■を追加しました。 </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="facebook">
+			<h1 class="ribbon-face">
+				<span class="ribbon-face-content">Facebook</span>
+			</h1>
+			<div class="facebook-content">
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkanasami.music%2F&amp;tabs=timeline&amp;width=300&amp;height=600&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="300" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+				</iframe>
+			</div>
+		</div>
 
-          return t;
-        }(document, "script", "twitter-wjs"));
-      </script>
-      <script th:inline="javascript">
-        (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&amp;version=v2.10";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        </script>
-
-       <a class="twitter-timeline"
-          href="https://twitter.com/asami_kana"
-          data-width="600px"
-          data-height="600px"
-	  data-chrome="nofooter">
-          @TwitterDevによるツイート
-        </a>
-      </div>
-<!--
-      <script>
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.11';
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script>
-
-      <div class="facebook">
-
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkanasami.music%2F&tabs=timeline&width=0&height=0&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500px" height="600px" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
-      </div>
--->
-    </div>
+		<div class="twitter">
+			<h1 class="ribbon">
+				<span class="ribbon-content">Twitter</span>
+			</h1>
+			<script th:inline="javascript">
+        			window.twttr = (function(d, s, id) {
+          			var js, fjs = d.getElementsByTagName(s)[0],
+          			t = window.twttr || {};
+          			if (d.getElementById(id)) return t;
+          			js = d.createElement(s);
+          			js.id = id;
+          			js.src = "https://platform.twitter.com/widgets.js";
+          			fjs.parentNode.insertBefore(js, fjs);
+	          		t._e = [];
+    	      			t.ready = function(f) {
+            				t._e.push(f);
+          			};
+	          		return t;
+        			}(document, "script", "twitter-wjs"));
+      		</script>
+      		<div class="twitter-content">
+				<a class="twitter-timeline" href="https://twitter.com/asami_kana"
+					data-width="350px" data-height="600px" data-chrome="nofooter">
+					@TwitterDevによるツイート 
+				</a>
+			</div>
+		</div>
+	</div>
 
 
-    <div class="shake">
-      <img src="http://35.185.151.37/images/peamanman.png" />
-    </div>
+	<div class="shake">
+		<img src="http://35.185.151.37/images/peamanman.png" />
+	</div>
 
-    <footer>
-      <hr />
-      <p>Copyright KanAsami</p>
-    </footer>
+	<footer>
+		<hr />
+		<p>Copyright KanAsami</p>
+	</footer>
 </body>
 </html>

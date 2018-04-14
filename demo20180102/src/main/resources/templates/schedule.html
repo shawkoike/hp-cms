@@ -101,7 +101,7 @@
     		<div class="profile_msg content-profile" th:each="d:${entity}">
   			<h4 class="title" th:text="${d.title}"></h4>
   			<p class="date" th:text="'日付 : ' + ${d.date}" />
-          	<p class="time" th:text="'時間 : OPEN/' + ${d.open} + ' START/' + ${d.start}" />
+          	<p class="time" th:text="'時間 : ' + ${d.start}" />
           	<p class="place" th:text="'場所 : ' + ${d.place}" />
           	<p class="content" th:text="${d.content}" />
           	<hr class="border" />
