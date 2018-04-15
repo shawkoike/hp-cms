@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
-  <title>ライブスケジュール追加</title>
+  <title>ライブスケジュール編集フォーム</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
   <!-- Bootstrap 3.3.7 -->
@@ -91,21 +91,28 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        DELETE LIVE SCHEDULE
+        EDIT LIVE SCHEDULE
         <small>Control panel</small>
       </h1>
     </section>
 
     <!-- Main content -->
     <section class="content">
-    		<div class="profile_msg content-profile" th:each="d:${entity}">
-  			<span class="text" th:text="${d.title} + ' : ' + ${d.date} + '(' + ${d.place} + ') => ' + ${d.sequence}"></span>
-  			<br />
- 		</div>
- 	  <form method="GET" class="sign-up" action="/deleteContentRequest" >
-    		<input type="text" name="num" placeholder="削除したいイベント番号を入力してください。" />
-    		<input style="text-align: center; margin-left: 10px;" type="submit" value="削除" class="sign-up-button" />
- 	  </form>
+      <form method="POST" class="sign-up" action="/editContentRequest" >
+      	<h4>タイトル</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" name="title" th:value="${title}" />
+	    <h4>本文</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" name="content" th:value="${content}" />
+	    <h4>場所</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" name="place" th:value="${place}" />
+	    <h4>日付</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" name="date" th:value="${date}" />
+	    <h4>開演時間</h4>
+	    <input  style="text-align: center; width: 70%;" type="text" class="sign-up-input" name="start" th:value="${start}" />
+	    <input type="hidden" name="sequence" th:value="${sequence}" />
+	    <br /><br />
+     	<input style="text-align: center;" type="submit" value="登録" class="sign-up-button" />
+   	  </form>
     </section>
 
    </div>

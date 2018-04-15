@@ -2,6 +2,6 @@ spring:
   datasource: 
     url: jdbc:mysql://localhost/kanasami?useSSL=false 
     username: koike
-    password: 19940522
-    #password: P@assw0rd!
+    #password: 19940522
+    password: P@assw0rd!
     driverClassName: com.mysql.jdbc.Driver

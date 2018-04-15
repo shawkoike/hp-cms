@@ -9,6 +9,43 @@
 <link rel="stylesheet" type="text/css"
 	href="http://35.185.151.37/css/top-mobile-2.css"
 	media="screen and (max-width: 900px)" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+var first_width = $(window).width();
+ 
+var timer = false;
+$(window).resize(function() {
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        //resize完了時の動作
+        var width = $(window).width();
+        if(width!=first_width){
+ 
+            console.log('resized');
+            fbiframe_reload();
+            first_width=width;
+        }
+    }, 200);
+});
+ 
+function fbiframe_reload(){//facebookウィジェットの再描画
+ 
+        var width = $(window).width();
+ 
+        var src = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPROCLASSpage%2F&tabs=timeline&width="+width+"&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+ 
+        $("#fbiframe").attr("src","");       
+        $("#fbiframe").attr("src",src); 
+ 
+        $("#fbiframe").attr("width",width); 
+};
+ 
+fbiframe_reload();
+/*]]>*/
+</script>
 
 <meta charset="UTF-8" />
 <title>Kanasami</title>
@@ -82,82 +119,39 @@
 	</script>
 	<div class="sns">
 		<div class="news">
-			<h1 class="ribbon-news">
+			<!--  <h1 class="ribbon-news">
 				<span class="ribbon-news-content">NEWS</span>
 			</h1>
+			-->
+			<h3 class="button-news">News</h3>
 			<div class="news-content">
 				<div class="box_srcollbar">
-					<ul>
-						<li>10/06　■■■■■■が再入荷しました。</li>
-						<li>10/05　○○○を追加しました。</li>
-						<li>10/04　■■■ を追加しました。</li>
-						<li>10/03　○○■■■○が再入荷しました。</li>
-						<li>10/02　○■■■■■■○○が再入荷しました。</li>
-						<li>10/01　○○○が再入荷しました。</li>
-						<li>09/28　○○■■○■■■が再入荷しました。</li>
-						<li>09/25　○○○■■■を追加しました。</li>
-						<li>09/23　○○○■■■■■を追加しました。</li>
-						<li>09/22　○○○■■■を追加しました。</li>
-						<li>09/20　○○■■■■○■■■を追加しました。</li>
-						<li>09/18　○○■■○■■■を追加しました。</li>
-						<li>09/17　○■■○○■■■を追加しました。 </li>
-						<li>10/06　■■■■■■が再入荷しました。</li>
-						<li>10/05　○○○を追加しました。</li>
-						<li>10/04　■■■ を追加しました。</li>
-						<li>10/03　○○■■■○が再入荷しました。</li>
-						<li>10/02　○■■■■■■○○が再入荷しました。</li>
-						<li>10/01　○○○が再入荷しました。</li>
-						<li>09/28　○○■■○■■■が再入荷しました。</li>
-						<li>09/25　○○○■■■を追加しました。</li>
-						<li>09/23　○○○■■■■■を追加しました。</li>
-						<li>09/22　○○○■■■を追加しました。</li>
-						<li>09/20　○○■■■■○■■■を追加しました。</li>
-						<li>09/18　○○■■○■■■を追加しました。</li>
-						<li>09/17　○■■○○■■■を追加しました。 </li>
-						<li>10/06　■■■■■■が再入荷しました。</li>
-						<li>10/05　○○○を追加しました。</li>
-						<li>10/04　■■■ を追加しました。</li>
-						<li>10/03　○○■■■○が再入荷しました。</li>
-						<li>10/02　○■■■■■■○○が再入荷しました。</li>
-						<li>10/01　○○○が再入荷しました。</li>
-						<li>09/28　○○■■○■■■が再入荷しました。</li>
-						<li>09/25　○○○■■■を追加しました。</li>
-						<li>09/23　○○○■■■■■を追加しました。</li>
-						<li>09/22　○○○■■■を追加しました。</li>
-						<li>09/20　○○■■■■○■■■を追加しました。</li>
-						<li>09/18　○○■■○■■■を追加しました。</li>
-						<li>09/17　○■■○○■■■を追加しました。 </li>
-						<li>10/06　■■■■■■が再入荷しました。</li>
-						<li>10/05　○○○を追加しました。</li>
-						<li>10/04　■■■ を追加しました。</li>
-						<li>10/03　○○■■■○が再入荷しました。</li>
-						<li>10/02　○■■■■■■○○が再入荷しました。</li>
-						<li>10/01　○○○が再入荷しました。</li>
-						<li>09/28　○○■■○■■■が再入荷しました。</li>
-						<li>09/25　○○○■■■を追加しました。</li>
-						<li>09/23　○○○■■■■■を追加しました。</li>
-						<li>09/22　○○○■■■を追加しました。</li>
-						<li>09/20　○○■■■■○■■■を追加しました。</li>
-						<li>09/18　○○■■○■■■を追加しました。</li>
-						<li>09/17　○■■○○■■■を追加しました。 </li>
+					<ul class="plate" id="cork" >
+						<div th:each="d:${topInfos}">
+							<span><li><a th:href="${d.url}"><p th:text="${d.updateDate} + '  ' + ${d.title}"></p></a></li></span>
+						</div>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="facebook">
-			<h1 class="ribbon-face">
+			<!-- <h1 class="ribbon-face">
 				<span class="ribbon-face-content">Facebook</span>
 			</h1>
-			<div class="facebook-content">
-				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkanasami.music%2F&amp;tabs=timeline&amp;width=300&amp;height=600&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="300" height="600" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+			-->
+			<h3 class="button-face">Facebook</h3>
+			<div class="facebook-content fb-container">
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkanasami.music%2F&amp;tabs=timeline&amp;width=350&amp;height=600&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false&amp;appId" width="350" height="600" style="border:none;overflow:hidden" scrolling="yes" frameborder="0" allowTransparency="true" allow="encrypted-media" data-adapt-container-width="true">
 				</iframe>
 			</div>
 		</div>
 
 		<div class="twitter">
-			<h1 class="ribbon">
+			<!-- <h1 class="ribbon">
 				<span class="ribbon-content">Twitter</span>
 			</h1>
+			-->
+			<h3 class="button-twitter">Twitter</h3>
 			<script th:inline="javascript">
         			window.twttr = (function(d, s, id) {
           			var js, fjs = d.getElementsByTagName(s)[0],

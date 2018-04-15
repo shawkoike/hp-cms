@@ -2,31 +2,28 @@ package com.example.demo.request;
 
 import javax.persistence.Column;
 
-public class Content {
+public class ContentEdit {
 	
-		// 件名
-			@Column
+			// 件名
 			private String title;
 			
 			// 本文
-			@Column
 			private String content;
 			
 			// 日付
-			@Column
 			private String date;
 			
 			// 場所
-			@Column
 			private String place;
 			
 			// 開場時間
-			@Column
 			private String open;
 			
 			// 開演
-			@Column
 			private String start;
+			
+			// シーケンス
+			private String sequence;
 
 	public String getTitle() {
 		return title;
@@ -75,6 +72,16 @@ public class Content {
 	public void setStart(String start) {
 		this.start = start;
 	}
+
+	public String getSequence() {
+		return sequence;
+	}
+
+	public void setSequence(String sequence) {
+		this.sequence = sequence;
+	}
+	
+	
 
 		
 	
